@@ -437,6 +437,8 @@ section {
     transition: .35s;
 }
 
+.animal-card { cursor: pointer; }
+
 .animal-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-hover);
@@ -950,6 +952,25 @@ nav {
 
 
 /* ==============================
+   ANIMAL -> BREED PAGE
+============================== */
+document.querySelectorAll(".animal-card[data-breed-page]").forEach(function(card) {
+    function openBreedPage() {
+        window.location.href = card.dataset.breedPage;
+    }
+    card.addEventListener("click", function(event) {
+        if (event.target.closest("a, button, input, select, textarea")) return;
+        openBreedPage();
+    });
+    card.addEventListener("keydown", function(event) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openBreedPage();
+        }
+    });
+});
+
+/* ==============================
    VETERINARY QUIZ
 ============================== */
 .vet-quiz-section{
@@ -1435,7 +1456,7 @@ nav {
 
         <!-- DOG -->
 
-        <div class="animal-card" data-category="pet">
+        <div class="animal-card" data-category="pet" data-breed-page="dog-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -1481,7 +1502,7 @@ nav {
 
         <!-- CAT -->
 
-        <div class="animal-card" data-category="pet">
+        <div class="animal-card" data-category="pet" data-breed-page="cat-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -1526,7 +1547,7 @@ nav {
 
         <!-- COW -->
 
-        <div class="animal-card" data-category="livestock">
+        <div class="animal-card" data-category="livestock" data-breed-page="cow-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -1571,7 +1592,7 @@ nav {
 
         <!-- BUFFALO -->
 
-        <div class="animal-card" data-category="livestock">
+        <div class="animal-card" data-category="livestock" data-breed-page="buffalo-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -1615,7 +1636,7 @@ nav {
 
         <!-- GOAT -->
 
-        <div class="animal-card" data-category="livestock">
+        <div class="animal-card" data-category="livestock" data-breed-page="goat-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -1659,7 +1680,7 @@ nav {
 
         <!-- SHEEP -->
 
-        <div class="animal-card" data-category="livestock">
+        <div class="animal-card" data-category="livestock" data-breed-page="sheep-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -1703,7 +1724,7 @@ nav {
 
         <!-- HORSE -->
 
-        <div class="animal-card" data-category="livestock">
+        <div class="animal-card" data-category="livestock" data-breed-page="horse-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -1748,7 +1769,7 @@ nav {
 
         <!-- DONKEY -->
 
-        <div class="animal-card" data-category="livestock">
+        <div class="animal-card" data-category="livestock" data-breed-page="donkey-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -1792,7 +1813,7 @@ nav {
 
         <!-- CAMEL -->
 
-        <div class="animal-card" data-category="livestock">
+        <div class="animal-card" data-category="livestock" data-breed-page="camel-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -1836,7 +1857,7 @@ nav {
 
         <!-- RABBIT -->
 
-        <div class="animal-card" data-category="pet">
+        <div class="animal-card" data-category="pet" data-breed-page="rabbit-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -1880,7 +1901,7 @@ nav {
 
         <!-- PIG -->
 
-        <div class="animal-card" data-category="livestock">
+        <div class="animal-card" data-category="livestock" data-breed-page="pig-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -1924,7 +1945,7 @@ nav {
 
         <!-- CHICKEN -->
 
-        <div class="animal-card" data-category="birds">
+        <div class="animal-card" data-category="birds" data-breed-page="chicken-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -1968,7 +1989,7 @@ nav {
 
         <!-- DUCK -->
 
-        <div class="animal-card" data-category="birds">
+        <div class="animal-card" data-category="birds" data-breed-page="duck-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -2012,7 +2033,7 @@ nav {
 
         <!-- TURKEY -->
 
-        <div class="animal-card" data-category="birds">
+        <div class="animal-card" data-category="birds" data-breed-page="turkey-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -2058,7 +2079,7 @@ nav {
 
         <!-- PIGEON -->
 
-        <div class="animal-card" data-category="birds">
+        <div class="animal-card" data-category="birds" data-breed-page="pigeon-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -2102,7 +2123,7 @@ nav {
 
         <!-- PARROT -->
 
-        <div class="animal-card" data-category="pet">
+        <div class="animal-card" data-category="pet" data-breed-page="parrot-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -2148,7 +2169,7 @@ nav {
 
         <!-- FISH -->
 
-        <div class="animal-card" data-category="aquatic">
+        <div class="animal-card" data-category="aquatic" data-breed-page="aquarium-fish-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -2195,7 +2216,7 @@ nav {
 
         <!-- TURTLE -->
 
-        <div class="animal-card" data-category="other">
+        <div class="animal-card" data-category="other" data-breed-page="turtle-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -2239,7 +2260,7 @@ nav {
 
         <!-- GUINEA PIG -->
 
-        <div class="animal-card" data-category="pet">
+        <div class="animal-card" data-category="pet" data-breed-page="guinea-pig-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -2283,7 +2304,7 @@ nav {
 
         <!-- HAMSTER -->
 
-        <div class="animal-card" data-category="pet">
+        <div class="animal-card" data-category="pet" data-breed-page="hamster-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -2329,7 +2350,7 @@ nav {
 
         <!-- DEER -->
 
-        <div class="animal-card" data-category="other">
+        <div class="animal-card" data-category="other" data-breed-page="deer-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
@@ -2375,7 +2396,7 @@ nav {
 
         <!-- YAK -->
 
-        <div class="animal-card" data-category="livestock">
+        <div class="animal-card" data-category="livestock" data-breed-page="yak-breeds.html" role="link" tabindex="0">
 
             <img
                 class="animal-image"
