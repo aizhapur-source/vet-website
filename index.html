@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-content="the.indie_vet09 - Veterinary education, animal care, breeds, nutrition, health and animal welfare.">
+content="the.indie_vet09 - Veterinary education, animal care, nutrition, health and animal welfare.">
 
 <title>the.indie_vet09 | Veterinary Animal Care</title>
 
@@ -835,7 +835,6 @@ nav {
 .section-title h2 span { color: var(--green); }
 
 
-/* ==============================\n   ANIMAL BREED LIBRARY\n============================== */\n.breed-section { background: #eef7f5; }\n.breed-toolbar { max-width: 1100px; margin: 0 auto 18px; display: grid; grid-template-columns: 1.4fr .8fr; gap: 14px; }\n.breed-search, .breed-select { width:100%; border:1px solid var(--border); background:#fff; color:var(--dark); padding:14px 17px; border-radius:14px; font:inherit; outline:none; }\n.breed-search:focus, .breed-select:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(15,118,110,.10); }\n.breed-library-head { max-width:1100px; margin:0 auto 18px; display:flex; justify-content:space-between; align-items:center; gap:15px; flex-wrap:wrap; }\n.selected-animal-title { font-size:22px; font-weight:900; color:var(--dark); }\n.breed-count { color:var(--muted); font-weight:700; }\n.breed-grid { max-width:1100px; margin:auto; display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }\n.breed-card { background:#fff; border:1px solid var(--border); border-radius:18px; overflow:hidden; box-shadow:var(--shadow); cursor:pointer; transition:.25s ease; }\n.breed-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-hover); }\n.breed-card-image { width:100%; height:145px; object-fit:cover; display:block; }\n.breed-card-body { padding:16px; }\n.breed-animal { display:inline-block; background:var(--light-green); color:var(--dark-green); border-radius:20px; padding:4px 9px; font-size:11px; font-weight:800; margin-bottom:8px; }\n.breed-card h3 { color:var(--green); margin:0 0 7px; font-size:17px; }\n.breed-card p { color:var(--muted); font-size:13px; margin:0; }\n.breed-view { display:block; margin-top:12px; color:var(--blue); font-size:12px; font-weight:800; }\n.breed-empty { grid-column:1/-1; text-align:center; padding:40px; background:#fff; border-radius:18px; color:var(--muted); }\n.breed-modal { position:fixed; inset:0; background:rgba(16,42,67,.70); display:none; align-items:center; justify-content:center; padding:20px; z-index:3000; }\n.breed-modal.show { display:flex; }\n.breed-modal-box { width:min(760px,100%); max-height:90vh; overflow:auto; background:#fff; border-radius:24px; padding:30px; position:relative; box-shadow:0 25px 70px rgba(0,0,0,.25); }\n.breed-close { position:absolute; right:18px; top:14px; border:none; background:#eef7f5; color:var(--dark); width:38px; height:38px; border-radius:50%; cursor:pointer; font-size:22px; z-index:2; }\n.breed-modal-top { display:grid; grid-template-columns:170px 1fr; gap:22px; align-items:center; margin-bottom:24px; padding-right:35px; }\n.breed-modal-image { width:170px; height:145px; object-fit:cover; border-radius:16px; }\n.breed-modal-animal { color:var(--green); font-weight:800; font-size:13px; margin-bottom:5px; }\n.breed-modal-box h2 { color:var(--dark); margin:0 0 5px; font-size:28px; }\n.breed-modal-subtitle { color:var(--muted); margin:0; }\n.breed-detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:13px; }\n.breed-detail { background:#f4f7f8; padding:15px; border-radius:13px; }\n.breed-detail.full { grid-column:1/-1; }\n.breed-detail strong { display:block; color:var(--blue); margin-bottom:5px; }\n.breed-detail span { color:var(--text); line-height:1.5; font-size:14px; }\n.breed-modal-note { margin-top:18px; padding:13px; border-radius:12px; background:#eef7f5; color:var(--muted); font-size:12px; }\n@media(max-width:1000px){ .breed-grid{grid-template-columns:repeat(3,1fr);} }\n@media(max-width:750px){ .breed-toolbar{grid-template-columns:1fr;} .breed-grid{grid-template-columns:repeat(2,1fr);} .breed-modal-top{grid-template-columns:1fr;} .breed-modal-image{width:100%;height:190px;} }\n@media(max-width:500px){ .breed-grid{grid-template-columns:1fr;} .breed-detail-grid{grid-template-columns:1fr;} .breed-detail.full{grid-column:auto;} }\n
 /* ==============================
    MOBILE
 ============================== */
@@ -950,23 +949,124 @@ nav {
 }
 
 
-/* Enhanced breed explorer */
-.breed-card-image{background:#eef5f5;object-fit:cover;}
-.breed-card-image.is-loading{filter:blur(2px);opacity:.72;}
-.breed-card-image.is-fallback{object-fit:cover;}
-.breed-card .breed-source{font-size:.72rem;color:#72808a;margin-top:7px;}
-.breed-detail.full p{margin:0;}
-.breed-detail span,.breed-detail p{white-space:normal;}
-.breed-detail strong{font-size:.9rem;}
-.breed-loading{display:inline-flex;align-items:center;gap:8px;color:#66757f;}
-.breed-spinner{width:15px;height:15px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;display:inline-block;animation:breedSpin .7s linear infinite;}
-@keyframes breedSpin{to{transform:rotate(360deg)}}
-.breed-modal-image{background:#eef5f5;}
-.breed-overview{line-height:1.75;color:#33434c;}
-.breed-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px;}
-.breed-fact{padding:12px 14px;border:1px solid rgba(0,0,0,.08);border-radius:12px;background:rgba(255,255,255,.55);}
-.breed-fact strong{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;opacity:.7;margin-bottom:4px;}
-@media(max-width:650px){.breed-facts{grid-template-columns:1fr;}}
+/* ==============================
+   VETERINARY QUIZ
+============================== */
+.vet-quiz-section{
+    padding:90px 20px;
+    background:linear-gradient(135deg,#eefaf7,#ffffff);
+}
+.vet-quiz-card{
+    max-width:900px;
+    margin:35px auto 0;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:35px;
+    box-shadow:var(--shadow);
+}
+.vet-quiz-intro{
+    text-align:center;
+    color:var(--text);
+    max-width:720px;
+    margin:0 auto 25px;
+}
+.vet-quiz-start-wrap{text-align:center;}
+.vet-quiz-start{
+    border:0;
+    background:var(--green);
+    color:#fff;
+    padding:14px 28px;
+    border-radius:30px;
+    font-weight:800;
+    cursor:pointer;
+    font-size:16px;
+    transition:.25s;
+}
+.vet-quiz-start:hover{background:var(--dark-green);transform:translateY(-2px);}
+.vet-quiz-box{display:none;}
+.vet-quiz-top{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    align-items:center;
+    margin-bottom:18px;
+}
+.vet-quiz-progress{
+    color:var(--green);
+    font-weight:800;
+    background:var(--light-green);
+    padding:7px 12px;
+    border-radius:20px;
+    font-size:14px;
+}
+.vet-quiz-question{
+    font-size:25px;
+    line-height:1.3;
+    margin-bottom:22px;
+}
+.vet-quiz-options{display:grid;gap:12px;}
+.vet-quiz-option{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:13px;
+    text-align:left;
+    padding:15px 17px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:#fff;
+    color:var(--dark);
+    cursor:pointer;
+    font-size:16px;
+    transition:.2s;
+}
+.vet-quiz-option:hover:not(:disabled){border-color:var(--green);background:#f1fbf8;transform:translateX(2px);}
+.vet-quiz-option:disabled{cursor:default;}
+.vet-quiz-option.correct{border-color:#16845f;background:#eaf8f1;}
+.vet-quiz-option.wrong{border-color:#c94c4c;background:#fff0f0;}
+.vet-option-letter{
+    min-width:32px;height:32px;
+    display:grid;place-items:center;
+    border-radius:50%;
+    background:#edf3f4;
+    font-weight:800;
+}
+.vet-quiz-feedback{
+    min-height:28px;
+    margin:18px 0;
+    padding:0;
+    font-weight:700;
+}
+.vet-quiz-feedback.good{color:#176b50;}
+.vet-quiz-feedback.bad{color:#a33c3c;}
+.vet-quiz-feedback.result-good{
+    padding:16px;
+    border-radius:14px;
+    background:var(--light-green);
+    color:var(--dark-green);
+}
+.vet-quiz-next{
+    border:0;
+    background:var(--blue);
+    color:#fff;
+    padding:12px 22px;
+    border-radius:28px;
+    font-weight:800;
+    cursor:pointer;
+}
+.vet-quiz-next:disabled{opacity:.45;cursor:not-allowed;}
+.vet-quiz-note{
+    margin-top:20px;
+    font-size:13px;
+    color:var(--muted);
+    text-align:center;
+}
+@media(max-width:700px){
+    .vet-quiz-card{padding:22px;}
+    .vet-quiz-question{font-size:21px;}
+    .vet-quiz-top{align-items:flex-start;flex-direction:column;}
+}
 </style>
 </head>
 
@@ -1009,7 +1109,6 @@ nav {
             <a href="#animals">Animals</a>
         </li>
         <li>
-            <a href="#breeds">Breeds</a>
         </li>
 
         <li>
@@ -1018,6 +1117,7 @@ nav {
 
         <li>
             <a href="#customer">Customer</a>
+            <a href="#quiz">Vet Quiz</a>
         </li>
 
         <li>
@@ -2593,67 +2693,37 @@ nav {
      CUSTOMER INFORMATION
 ============================== -->
 
+
 <!-- ==============================
-     BREED EXPLORER
+     VETERINARY QUIZ
 ============================== -->
-<!-- ==============================
-     ANIMAL BREED LIBRARY
-============================== -->
-<section class="breed-section" id="breeds">
+<section class="vet-quiz-section" id="quiz">
 <div class="container">
-
     <div class="section-title">
-        <h2>🐾 Animal <span>Breed Library</span></h2>
-        <p>Click any animal above to open its breeds. You can also search any breed below.</p>
+        <h2>🩺 Veterinary <span>Quiz</span></h2>
+        <p>Test your basic veterinary and animal-care knowledge with 50 quick multiple-choice questions covering veterinary basics, animal health, nutrition, welfare and preventive care.</p>
     </div>
 
-    <div class="breed-toolbar">
-        <input type="search" id="breedSearch" class="breed-search" placeholder="🔎 Search breed...">
-        <select id="breedAnimalFilter" class="breed-select">
-            <option value="all">All animals</option>
-        </select>
+    <div class="vet-quiz-card">
+        <p class="vet-quiz-intro">Answer one question at a time. Your score appears at the end, and you can restart the quiz anytime.</p>
+        <div class="vet-quiz-start-wrap">
+            <button class="vet-quiz-start" id="vetQuizStart" type="button">Start Vet Quiz</button>
+        </div>
+
+        <div class="vet-quiz-box" id="vetQuiz">
+            <div class="vet-quiz-top">
+                <span class="vet-quiz-progress" id="vetQuizProgress">Question 1 of 50</span>
+                <span>Knowledge Check</span>
+            </div>
+            <h3 class="vet-quiz-question" id="vetQuizQuestion"></h3>
+            <div class="vet-quiz-options" id="vetQuizOptions"></div>
+            <div class="vet-quiz-feedback" id="vetQuizFeedback"></div>
+            <button class="vet-quiz-next" id="vetQuizNext" type="button" disabled>Next Question</button>
+            <p class="vet-quiz-note">Educational quiz only — for an animal's diagnosis or treatment, consult a qualified veterinarian.</p>
+        </div>
     </div>
-
-    <div class="breed-library-head">
-        <div id="selectedAnimalTitle" class="selected-animal-title">🐾 Select an animal</div>
-        <div id="breedCount" class="breed-count"></div>
-    </div>
-
-    <div class="breed-grid" id="breedGrid"></div>
-
 </div>
 </section>
-
-<!-- Breed details -->
-<div class="breed-modal" id="breedModal" aria-hidden="true">
-    <div class="breed-modal-box">
-        <button class="breed-close" id="breedClose" type="button" aria-label="Close">×</button>
-        <div class="breed-modal-top">
-            <img id="breedModalImage" class="breed-modal-image" src="" alt="Breed image">
-            <div>
-                <div class="breed-modal-animal" id="breedModalAnimal"></div>
-                <h2 id="breedModalTitle"></h2>
-                <p class="breed-modal-subtitle">Breed profile &amp; animal-care reference</p>
-            </div>
-        </div>
-        <div class="breed-detail-grid">
-            <div class="breed-detail"><strong>🐾 Animal</strong><span id="breedAnimal"></span></div>
-            <div class="breed-detail"><strong>🏷️ Category</strong><span id="breedCategory"></span></div>
-            <div class="breed-detail full"><strong>📖 Breed Overview</strong><p id="breedOverview" class="breed-overview">Loading detailed information…</p></div>
-            <div class="breed-detail"><strong>📏 Typical Size</strong><span id="breedSize"></span></div>
-            <div class="breed-detail"><strong>🕒 Typical Lifespan</strong><span id="breedLifespan"></span></div>
-            <div class="breed-detail"><strong>🍽️ Diet</strong><span id="breedDiet"></span></div>
-            <div class="breed-detail"><strong>🏠 Housing / Environment</strong><span id="breedHousing"></span></div>
-            <div class="breed-detail"><strong>🧠 Behaviour</strong><span id="breedBehaviour"></span></div>
-            <div class="breed-detail"><strong>🩺 Preventive Care</strong><span id="breedPreventive"></span></div>
-            <div class="breed-detail full"><strong>🥗 Nutrition &amp; Daily Care</strong><span id="breedNutrition"></span></div>
-            <div class="breed-detail full"><strong>🩺 Common Health Concerns</strong><span id="breedHealth"></span></div>
-            <div class="breed-detail full"><strong>🚨 When to Contact a Veterinarian</strong><span id="breedEmergency"></span></div>
-            <div class="breed-detail full"><strong>🎯 Typical Purpose</strong><span id="breedPurposeStatic"></span></div>
-        </div>
-        <div class="breed-modal-note">For diagnosis, treatment, vaccination and individual feeding plans, use a qualified veterinarian.</div>
-    </div>
-</div>
 
 <section class="customer-section" id="customer">
 <div class="container">
@@ -2670,11 +2740,12 @@ nav {
     </div>
 
     <div class="customer-form-card">
-        <form id="customerForm" action="https://formsubmit.co/ahmadshadan1008@gmail.com" method="POST">
-<input type="hidden" name="_subject" value="New Veterinary Customer Request">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_captcha" value="false">
-
+        <form id="customerForm"
+      action="https://formsubmit.co/ahmadshadan1008@gmail.com"
+      method="POST">
+            <input type="hidden" name="_subject" value="New Customer Request - the.indie_vet09">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
 
             <div class="customer-form-grid">
 
@@ -2811,12 +2882,12 @@ nav {
                     📩 Submit Information
                 </button>
                 <span class="customer-note">
-                    Your information is saved only in this browser unless you connect this form to a server.
+                    Your information will be sent securely to our email after you submit the form.
                 </span>
             </div>
 
             <div class="form-success" id="formSuccess">
-                ✅ Thank you! Your information has been recorded in this browser.
+                ✅ Thank you! Your information has been submitted. We will receive it by email.
             </div>
 
         </form>
@@ -3091,305 +3162,173 @@ const customerForm = document.getElementById("customerForm");
 const formSuccess = document.getElementById("formSuccess");
 
 if (customerForm) {
-    customerForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const formData = new FormData(customerForm);
-        const customer = {};
-
-        formData.forEach(function(value, key) {
-            customer[key] = value;
-        });
-
-        customer.submittedAt = new Date().toLocaleString();
-
-        const existingCustomers =
-            JSON.parse(localStorage.getItem("vetCustomers") || "[]");
-
-        existingCustomers.push(customer);
-
-        localStorage.setItem(
-            "vetCustomers",
-            JSON.stringify(existingCustomers)
-        );
-
-        customerForm.reset();
-        formSuccess.style.display = "block";
-
-        setTimeout(function() {
-            formSuccess.style.display = "none";
-        }, 5000);
+    customerForm.addEventListener("submit", function() {
+        if (formSuccess) {
+            formSuccess.textContent = "📩 Sending your information...";
+            formSuccess.style.display = "block";
+        }
     });
 }
-
 
 /* ==============================
    CLICK ANIMAL -> BREEDS
 ============================== */
-const breedLibraryData = [{"icon": "🐕", "animal": "Dog", "image": "images/dog.jpeg", "breeds": ["Labrador Retriever", "German Shepherd", "Golden Retriever", "French Bulldog", "Bulldog", "Poodle", "Beagle", "Rottweiler", "Dachshund", "German Shorthaired Pointer", "Yorkshire Terrier", "Boxer", "Siberian Husky", "Australian Shepherd", "Great Dane", "Doberman Pinscher", "Miniature Schnauzer", "Cavalier King Charles Spaniel", "Shih Tzu", "Boston Terrier", "Pomeranian", "Bernese Mountain Dog", "Chihuahua", "Pug", "Akita", "Alaskan Malamute", "Border Collie", "Cocker Spaniel", "Cane Corso", "Dalmatian", "Belgian Malinois", "Indian Pariah Dog"], "info": {"Popular Breeds": "Labrador Retriever, German Shepherd, Golden Retriever, French Bulldog, Bulldog, Poodle, Beagle, Rottweiler, Dachshund, German Shorthaired Pointer, Yorkshire Terrier, Boxer, Siberian Husky, Australian Shepherd, Great Dane, Doberman Pinscher, Miniature Schnauzer, Cavalier King Charles Spaniel, Shih Tzu, Boston Terrier, Pomeranian, Bernese Mountain Dog, Chihuahua, Pug, Akita, Alaskan Malamute, Border Collie, Cocker Spaniel, Cane Corso, Dalmatian, Belgian Malinois, Indian Pariah Dog.", "Nutrition": "Dogs require a complete and balanced diet appropriate for age, size and activity level, along with clean water.", "Common Health Concerns": "Dental disease, obesity, skin problems, parasites, gastrointestinal disorders and infectious diseases."}}, {"icon": "🐈", "animal": "Cat", "image": "images/cat.jpeg", "breeds": ["Persian", "Maine Coon", "Siamese", "Ragdoll", "Bengal", "British Shorthair", "Scottish Fold", "Sphynx", "Russian Blue", "Abyssinian", "American Shorthair", "Birman", "Burmese", "Devon Rex", "Cornish Rex", "Norwegian Forest Cat", "Turkish Angora", "Turkish Van", "Oriental Shorthair", "Exotic Shorthair", "Savannah", "Himalayan", "Manx", "Somali", "Egyptian Mau", "Tonkinese", "Ragamuffin", "Siberian", "Bombay", "Domestic Shorthair"], "info": {"Popular Breeds": "Persian, Maine Coon, Siamese, Ragdoll, Bengal, British Shorthair, Scottish Fold, Sphynx, Russian Blue, Abyssinian, American Shorthair, Birman, Burmese, Devon Rex, Cornish Rex, Norwegian Forest Cat, Turkish Angora, Turkish Van, Oriental Shorthair, Exotic Shorthair, Savannah, Himalayan, Manx, Somali, Egyptian Mau, Tonkinese, Ragamuffin, Siberian, Bombay, Domestic Shorthair.", "Nutrition": "Cats need a complete and balanced diet appropriate for their life stage, with adequate protein and water.", "Common Health Concerns": "Dental disease, obesity, urinary problems, parasites and respiratory infections."}}, {"icon": "🐄", "animal": "Cow", "image": "images/cow.jpeg", "breeds": ["Gir", "Sahiwal", "Red Sindhi", "Rathi", "Tharparkar", "Kankrej", "Hariana", "Ongole", "Deoni", "Dangi", "Hallikar", "Krishna Valley", "Kangayam", "Vechur", "Malnad Gidda", "Punganur", "Holstein Friesian", "Jersey", "Brown Swiss", "Ayrshire", "Guernsey", "Simmental", "Hereford", "Angus", "Limousin", "Charolais", "Shorthorn", "Brahman"], "info": {"Popular Breeds": "Gir, Sahiwal, Red Sindhi, Rathi, Tharparkar, Kankrej, Hariana, Ongole, Deoni, Dangi, Hallikar, Krishna Valley, Kangayam, Vechur, Malnad Gidda, Punganur, Holstein Friesian, Jersey, Brown Swiss, Ayrshire, Guernsey, Simmental, Hereford, Angus, Limousin, Charolais, Shorthorn, Brahman.", "Nutrition": "Forage, hay, silage, concentrates, minerals and clean water.", "Common Health Concerns": "Mastitis, foot-and-mouth disease, bloat, metabolic disorders, parasites and reproductive problems."}}, {"icon": "🐃", "animal": "Buffalo", "image": "images/buffalo.jpeg", "breeds": ["Murrah", "Nili-Ravi", "Jaffarabadi", "Surti", "Mehsana", "Bhadawari", "Nagpuri", "Pandharpuri", "Toda", "Marathwadi", "Banni", "Chilika", "Kalahandi", "Manda", "Tarai", "Mediterranean Buffalo", "Egyptian Buffalo", "Anatolian Buffalo"], "info": {"Popular Breeds": "Murrah, Nili-Ravi, Jaffarabadi, Surti, Mehsana, Bhadawari, Nagpuri, Pandharpuri, Toda, Marathwadi, Banni, Chilika, Kalahandi, Manda, Tarai, Mediterranean Buffalo, Egyptian Buffalo, Anatolian Buffalo.", "Nutrition": "Green fodder, dry fodder, silage, concentrates, minerals and water.", "Common Health Concerns": "Mastitis, parasites, heat stress, metabolic and reproductive disorders."}}, {"icon": "🐐", "animal": "Goat", "image": "images/goat.jpeg", "breeds": ["Jamunapari", "Beetal", "Barbari", "Sirohi", "Black Bengal", "Osmanabadi", "Malabari", "Surti", "Jakhrana", "Sojat", "Gohilwadi", "Mehsana", "Kutchi", "Marwari", "Zalawadi", "Sangamneri", "Beetal Cross", "Boer", "Saanen", "Alpine", "Toggenburg", "Angora", "Nubian", "Kiko", "LaMancha", "Damascus", "Pygmy", "Nigerian Dwarf"], "info": {"Popular Breeds": "Jamunapari, Beetal, Barbari, Sirohi, Black Bengal, Osmanabadi, Malabari, Surti, Jakhrana, Sojat, Gohilwadi, Mehsana, Kutchi, Marwari, Zalawadi, Sangamneri, Beetal Cross, Boer, Saanen, Alpine, Toggenburg, Angora, Nubian, Kiko, LaMancha, Damascus, Pygmy, Nigerian Dwarf.", "Nutrition": "Browse, grasses, hay, suitable concentrates and mineral supplementation.", "Common Health Concerns": "PPR, enterotoxemia, pneumonia, parasites and hoof problems."}}, {"icon": "🐑", "animal": "Sheep", "image": "images/sheep.jpeg", "breeds": ["Merino", "Rambouillet", "Dorset", "Suffolk", "Hampshire", "Southdown", "Shropshire", "Oxford Down", "Romney", "Corriedale", "Lincoln", "Leicester", "Texel", "Awassi", "Karakul", "Dorper", "Deccani", "Nellore", "Mandya", "Bellary", "Marwari", "Malpura", "Sonadi", "Jaisalmeri", "Muzaffarnagari", "Nali", "Garole", "Gaddi", "Changthangi", "Tibetan", "Bikaneri"], "info": {"Popular Breeds": "Merino, Rambouillet, Dorset, Suffolk, Hampshire, Southdown, Shropshire, Oxford Down, Romney, Corriedale, Lincoln, Leicester, Texel, Awassi, Karakul, Dorper, Deccani, Nellore, Mandya, Bellary, Marwari, Malpura, Sonadi, Jaisalmeri, Muzaffarnagari, Nali, Garole, Gaddi, Changthangi, Tibetan, Bikaneri.", "Nutrition": "Pasture, forage, hay and suitable supplementary feed.", "Common Health Concerns": "Foot problems, parasites, pneumonia, enterotoxemia and infectious diseases."}}, {"icon": "🐎", "animal": "Horse", "image": "images/horse.jpeg", "breeds": ["Arabian", "Thoroughbred", "American Quarter Horse", "Appaloosa", "American Paint Horse", "Morgan", "Mustang", "Tennessee Walking Horse", "Standardbred", "Clydesdale", "Shire", "Percheron", "Belgian Draft", "Friesian", "Andalusian", "Lusitano", "Akhal-Teke", "Hanoverian", "Holsteiner", "Oldenburg", "Trakehner", "Lipizzaner", "Haflinger", "Icelandic Horse", "Fjord Horse", "Marwari", "Kathiawari", "Manipuri Pony", "Spiti Horse", "Bhutia Horse"], "info": {"Popular Breeds": "Arabian, Thoroughbred, American Quarter Horse, Appaloosa, American Paint Horse, Morgan, Mustang, Tennessee Walking Horse, Standardbred, Clydesdale, Shire, Percheron, Belgian Draft, Friesian, Andalusian, Lusitano, Akhal-Teke, Hanoverian, Holsteiner, Oldenburg, Trakehner, Lipizzaner, Haflinger, Icelandic Horse, Fjord Horse, Marwari, Kathiawari, Manipuri Pony, Spiti Horse, Bhutia Horse.", "Nutrition": "Good-quality forage should form the basis of the diet, with concentrates according to workload.", "Common Health Concerns": "Colic, lameness, dental problems, respiratory disease and skin disorders."}}, {"icon": "🫏", "animal": "Donkey", "image": "images/donkey.jpeg", "breeds": ["Standard Donkey", "Mammoth Jackstock", "American Mammoth Jack", "Poitou", "Catalan", "Andalusian", "Zamorano-Leonese", "Baudet de Poitou", "Miniature Mediterranean", "Sardinian", "Nubian", "Egyptian Baladi"], "info": {"Popular Breeds": "Standard Donkey, Mammoth Jackstock, American Mammoth Jack, Poitou, Catalan, Andalusian, Zamorano-Leonese, Baudet de Poitou, Miniature Mediterranean, Sardinian, Nubian, Egyptian Baladi.", "Nutrition": "High-fiber forage with controlled energy intake and clean water.", "Common Health Concerns": "Hoof problems, dental disease, parasites and obesity-related problems."}}, {"icon": "🐪", "animal": "Camel", "image": "images/camel.jpeg", "breeds": ["Dromedary", "Bactrian", "Wild Bactrian", "Kharai Camel", "Bikaneri Camel", "Jaisalmeri Camel", "Mewari Camel", "Kachchhi Camel", "Marwari Camel", "Arabian Camel"], "info": {"Popular Breeds": "Dromedary, Bactrian, Wild Bactrian, Kharai Camel, Bikaneri Camel, Jaisalmeri Camel, Mewari Camel, Kachchhi Camel, Marwari Camel, Mewari Camel, Arabian Camel.", "Nutrition": "Browse, shrubs, grasses and suitable supplementary feed.", "Common Health Concerns": "Parasites, respiratory problems, skin disorders and nutritional problems."}}, {"icon": "🐇", "animal": "Rabbit", "image": "images/rabbit.jpeg", "breeds": ["Holland Lop", "Netherland Dwarf", "Mini Rex", "Rex", "Dutch", "Lionhead", "Flemish Giant", "New Zealand White", "Californian", "English Angora", "French Angora", "Satin Angora", "Harlequin", "Havana", "Himalayan", "Mini Lop", "English Lop", "American Fuzzy Lop", "Jersey Wooly", "Polish", "Checkered Giant", "Silver Fox", "Chinchilla", "Blanc de Hotot", "Belgian Hare"], "info": {"Popular Breeds": "Holland Lop, Netherland Dwarf, Mini Rex, Rex, Dutch, Lionhead, Flemish Giant, New Zealand White, Californian, English Angora, French Angora, Satin Angora, Harlequin, Havana, Himalayan, Mini Lop, English Lop, American Fuzzy Lop, Jersey Wooly, Polish, Checkered Giant, Silver Fox, Chinchilla, Blanc de Hotot, Belgian Hare.", "Nutrition": "High-quality hay, suitable greens, controlled pellets and clean water.", "Common Health Concerns": "Dental disease, gastrointestinal stasis, parasites and respiratory problems."}}, {"icon": "🐖", "animal": "Pig", "image": "images/pig.jpeg", "breeds": ["Large White", "Landrace", "Duroc", "Hampshire", "Berkshire", "Yorkshire", "Pietrain", "Poland China", "Chester White", "Tamworth", "Gloucestershire Old Spots", "Saddleback", "Meishan", "Mangalitsa", "Kunekune", "Vietnamese Pot-Bellied Pig", "Iberian Pig", "American Yorkshire", "Hereford", "British Saddleback"], "info": {"Popular Breeds": "Large White, Landrace, Duroc, Hampshire, Berkshire, Yorkshire, Pietrain, Poland China, Chester White, Tamworth, Gloucestershire Old Spots, Saddleback, Meishan, Mangalitsa, Kunekune, Vietnamese Pot-Bellied Pig, Iberian Pig, American Yorkshire, Hereford, British Saddleback.", "Nutrition": "Balanced feed providing energy, protein, minerals and vitamins.", "Common Health Concerns": "Respiratory disease, diarrhea, parasites and infectious diseases."}}, {"icon": "🐔", "animal": "Chicken", "image": "images/chicken.jpeg", "breeds": ["Rhode Island Red", "White Leghorn", "Plymouth Rock", "Sussex", "Australorp", "Orpington", "Wyandotte", "New Hampshire Red", "Brahma", "Cochin", "Silkie", "Ayam Cemani", "Kadaknath", "Aseel", "Ghagus", "Nicobari", "Naked Neck", "Frizzle", "Minorca", "Ancona", "Hamburg", "Faverolles", "Marans", "Araucana", "Ameraucana", "Cornish", "Jersey Giant", "Polish", "Bantam", "Fayoumi"], "info": {"Popular Breeds": "Rhode Island Red, White Leghorn, Plymouth Rock, Sussex, Australorp, Orpington, Wyandotte, New Hampshire Red, Brahma, Cochin, Silkie, Ayam Cemani, Kadaknath, Aseel, Ghagus, Nicobari, Naked Neck, Frizzle, Minorca, Ancona, Hamburg, Faverolles, Marans, Araucana, Ameraucana, Cornish, Jersey Giant, Polish, Bantam, Fayoumi.", "Nutrition": "Balanced starter, grower or layer feed according to age and production.", "Common Health Concerns": "Coccidiosis, Newcastle disease, infectious bronchitis and parasites."}}, {"icon": "🦆", "animal": "Duck", "image": "images/duck.jpeg", "breeds": ["Pekin", "Khaki Campbell", "Indian Runner", "Muscovy", "Rouen", "Welsh Harlequin", "Cayuga", "Swedish Blue", "Buff Orpington", "Silver Appleyard", "Saxony", "Magpie", "Ancona", "Crested", "Call Duck", "East Indie", "Aylesbury", "Campbell", "Bali Duck", "Shetland Duck"], "info": {"Popular Breeds": "Pekin, Khaki Campbell, Indian Runner, Muscovy, Rouen, Welsh Harlequin, Cayuga, Swedish Blue, Buff Orpington, Silver Appleyard, Saxony, Magpie, Ancona, Crested, Call Duck, East Indie, Aylesbury, Campbell, Bali Duck, Shetland Duck.", "Nutrition": "Balanced waterfowl feed, appropriate greens and clean water.", "Common Health Concerns": "Respiratory disease, parasites, nutritional problems and infections."}}, {"icon": "🦃", "animal": "Turkey", "image": "images/turkey.jpeg", "breeds": ["Broad Breasted White", "Bronze", "Bourbon Red", "Narragansett"], "info": {"Popular Types": "Broad Breasted White, Bronze, Bourbon Red and Narragansett.", "Nutrition": "Age-appropriate feed with sufficient protein, vitamins and minerals.", "Common Health Concerns": "Respiratory disease, parasites and nutritional disorders."}}, {"icon": "🕊", "animal": "Pigeon", "image": "images/pigeon.jpeg", "breeds": ["Racing Homer", "King", "Carneau", "Mondain", "Lahore", "Fantail", "Jacobin", "Frillback", "Pouters", "Tumblers", "Rollers", "Modena", "Archangel", "Indian Fantail", "Oriental Frill", "Tippler", "Utility King", "Giant Homer", "English Carrier", "English Trumpeter"], "info": {"Popular Breeds": "Racing Homer, King, Carneau, Mondain, Lahore, Fantail, Jacobin, Frillback, Pouters, Tumblers, Rollers, Modena, Archangel, Indian Fantail, Oriental Frill, Tippler, Utility King, Giant Homer, English Carrier, English Trumpeter.", "Nutrition": "Balanced grains and seeds with appropriate minerals and clean water.", "Common Health Concerns": "Respiratory disease, parasites, canker and nutritional disorders."}}, {"icon": "🦜", "animal": "Parrot", "image": "images/parrot.jpeg", "breeds": ["Budgerigar", "Cockatiel", "African Grey", "Lovebird", "Macaw", "Amazon Parrot"], "info": {"Popular Types": "Budgerigar, Cockatiel, African Grey, Lovebird, Macaw and Amazon Parrot.", "Nutrition": "Species-appropriate formulated diet with suitable vegetables and fruits.", "Common Health Concerns": "Feather disorders, respiratory disease, nutritional deficiencies and infections."}}, {"icon": "🐠", "animal": "Aquarium Fish", "image": "images/fish.jpeg", "breeds": ["Goldfish", "Guppy", "Molly", "Betta", "Tetra", "Angelfish", "Koi"], "info": {"Popular Types": "Goldfish, Guppy, Molly, Betta, Tetra, Angelfish and Koi.", "Care": "Water quality, temperature, filtration, oxygenation and stocking density are important.", "Common Health Concerns": "Ich, fin rot, parasites, fungal disease and water-quality problems."}}, {"icon": "🐢", "animal": "Turtle", "image": "images/turtle.jpeg", "breeds": ["Red-Eared Slider", "Yellow-Bellied Slider", "Indian Star Tortoise", "African Spurred Tortoise", "Russian Tortoise", "Greek Tortoise", "Hermann’s Tortoise", "Leopard Tortoise", "Sulcata Tortoise", "Box Turtle", "Painted Turtle", "Map Turtle", "Musk Turtle", "Snapping Turtle", "Softshell Turtle", "Indian Roofed Turtle", "Indian Flapshell Turtle", "Asian Forest Turtle"], "info": {"Popular Breeds": "Red-Eared Slider, Yellow-Bellied Slider, Indian Star Tortoise, African Spurred Tortoise, Russian Tortoise, Greek Tortoise, Hermann’s Tortoise, Leopard Tortoise, Sulcata Tortoise, Box Turtle, Painted Turtle, Map Turtle, Musk Turtle, Snapping Turtle, Softshell Turtle, Indian Roofed Turtle, Indian Flapshell Turtle, Asian Forest Turtle.", "Care": "Appropriate UVB exposure, temperature, habitat hygiene and suitable nutrition.", "Common Health Concerns": "Shell disease, respiratory disease, nutritional deficiencies and parasites."}}, {"icon": "🐹", "animal": "Guinea Pig", "image": "images/guinea-pig.jpeg", "breeds": ["American", "Abyssinian", "Peruvian", "Silkie/Sheltie", "Teddy", "Texel", "Rex", "Coronet", "Merino", "Lunkarya", "Alpaca", "Skinny Pig", "Baldwin"], "info": {"Popular Breeds": "American, Abyssinian, Peruvian, Silkie/Sheltie, Teddy, Texel, Rex, Coronet, Merino, Lunkarya, Alpaca, Skinny Pig, Baldwin.", "Nutrition": "Unlimited hay, suitable vegetables, appropriate pellets and vitamin C.", "Common Health Concerns": "Dental disease, vitamin C deficiency, skin problems and gastrointestinal disorders."}}, {"icon": "🐹", "animal": "Hamster", "image": "images/hamster.jpeg", "breeds": ["Syrian", "Roborovski", "Campbell's Dwarf", "Winter White"], "info": {"Popular Types": "Syrian, Roborovski, Campbell's Dwarf and Winter White.", "Nutrition": "Balanced hamster diet with suitable pellets, seeds and small amounts of vegetables.", "Common Health Concerns": "Dental disease, skin disease, respiratory problems and obesity."}}, {"icon": "🦌", "animal": "Deer", "image": "images/deer.jpeg", "breeds": ["Spotted Deer", "Sambar", "Red Deer", "Axis Deer", "other regional species"], "info": {"Examples": "Spotted Deer, Sambar, Red Deer, Axis Deer and other regional species.", "Nutrition": "Browse, leaves, grasses and other plant material.", "Health Concerns": "Parasites, nutritional problems, injuries and infectious diseases."}}, {"icon": "🐂", "animal": "Yak", "image": "images/yak.jpeg", "breeds": ["Domestic Yak", "Wild Yak", "White Yak", "Golden Yak", "Black Yak", "Brown Yak"], "info": {"Popular Breeds": "Domestic Yak, Wild Yak, White Yak, Golden Yak, Black Yak, Brown Yak.", "Nutrition": "Grazing on grasses and other vegetation, with supplementation where appropriate.", "Health Concerns": "Parasites, respiratory conditions, nutritional problems and injuries."}}];
-const breedGrid = document.getElementById("breedGrid");
-const breedSearch = document.getElementById("breedSearch");
-const breedAnimalFilter = document.getElementById("breedAnimalFilter");
-const breedCount = document.getElementById("breedCount");
-const selectedAnimalTitle = document.getElementById("selectedAnimalTitle");
-const breedModal = document.getElementById("breedModal");
-const breedClose = document.getElementById("breedClose");
-let selectedAnimal = "all";
-const wikiCache = new Map();
 
-function allBreedRecords() {
-    const rows=[];
-    breedLibraryData.forEach(function(animal) {
-        animal.breeds.forEach(function(breed) { rows.push({...animal, breed: breed}); });
+/* ==============================
+   VETERINARY QUIZ
+============================== */
+const vetQuizQuestions = [
+    {question:"Which organ pumps blood through an animal's body?",options:["Heart","Liver","Kidney","Spleen"],answer:0,explanation:"The heart pumps blood through the circulatory system."},
+    {question:"Which system is primarily responsible for breathing?",options:["Respiratory system","Digestive system","Skeletal system","Urinary system"],answer:0,explanation:"The respiratory system brings oxygen into the body and removes carbon dioxide."},
+    {question:"What is an important part of routine preventive veterinary care?",options:["Vaccination and parasite control","Skipping checkups","Giving random medicines","Avoiding clean water"],answer:0,explanation:"Vaccination, parasite prevention and regular examinations help prevent disease and detect problems early."},
+    {question:"Which mineral is especially important for normal bone development?",options:["Calcium","Caffeine","Alcohol","Sodium chloride only"],answer:0,explanation:"Calcium is essential for healthy bones and teeth."},
+    {question:"What should you do before giving a human medicine to an animal?",options:["Consult a veterinarian","Give the adult human dose","Mix several medicines","Give double the dose"],answer:0,explanation:"Some human medicines can be toxic to animals, so veterinary advice is important."},
+    {question:"Which external parasite commonly causes itching in dogs and cats?",options:["Flea","Roundworm","Tapeworm","Bacterium"],answer:0,explanation:"Fleas are common external parasites and may cause itching, dermatitis and other problems."},
+    {question:"Which sign can be a veterinary emergency?",options:["Severe difficulty breathing","Normal appetite","Normal walking","Relaxed sleeping"],answer:0,explanation:"Severe breathing difficulty requires prompt veterinary assessment."},
+    {question:"Why is clean drinking water essential for animals?",options:["It supports hydration and normal body functions","It replaces every nutrient","It prevents every disease","It is only needed in summer"],answer:0,explanation:"Water is essential for hydration, circulation, digestion and many other body functions."},
+    {question:"Which condition is commonly associated with severe dehydration?",options:["Dry or tacky gums and weakness","Improved hydration","Normal energy only","Faster hair growth"],answer:0,explanation:"Dehydration can cause dry mucous membranes, weakness and other clinical signs."},
+    {question:"What is the main purpose of a veterinary physical examination?",options:["Assess health and detect abnormalities","Choose an animal's name","Replace all vaccinations","Guarantee that disease is impossible"],answer:0,explanation:"A physical examination helps identify normal and abnormal findings and guides further care."},
+    {question:"Which practice helps reduce the risk of dental disease in many companion animals?",options:["Regular dental care","Feeding only sweets","Never checking the mouth","Avoiding water"],answer:0,explanation:"Routine dental care and veterinary oral examinations can help reduce dental disease."},
+    {question:"What is a zoonotic disease?",options:["A disease that can naturally spread between animals and people","A disease found only in plants","A nutritional supplement","A type of vaccine"],answer:0,explanation:"Zoonoses are infections that can be transmitted between animals and humans."},
+    {question:"Which nutrient is the main energy source in many animal diets?",options:["Carbohydrates and fats","Water only","Vitamins only","Minerals only"],answer:0,explanation:"Carbohydrates and fats provide energy, while proteins, vitamins, minerals and water have other essential roles."},
+    {question:"Why should antibiotics not be used without veterinary guidance?",options:["Incorrect use can cause treatment failure and antimicrobial resistance","They always cure viral infections","They are harmless at any dose","They replace vaccination"],answer:0,explanation:"Veterinary guidance helps select the right drug, dose and duration and reduces antimicrobial resistance."},
+    {question:"Which body system includes the kidneys and helps regulate fluid and waste removal?",options:["Urinary system","Respiratory system","Skeletal system","Integumentary system"],answer:0,explanation:"The urinary system, including the kidneys, helps remove metabolic waste and regulate fluid balance."},
+    {question:"What is mastitis?",options:["Inflammation of the mammary gland","Inflammation of the hoof only","A respiratory virus","A bone fracture"],answer:0,explanation:"Mastitis is inflammation of the mammary gland and is especially important in dairy animals."},
+    {question:"Which management practice is important for cattle, buffalo, sheep and goats?",options:["Parasite control and appropriate nutrition","No access to water","Ignoring hoof problems","Feeding only treats"],answer:0,explanation:"Livestock need balanced nutrition, clean water, parasite control, suitable housing and routine health care."},
+    {question:"What is a useful first response when an animal has a suspected fracture?",options:["Keep the animal calm and seek veterinary care","Force the limb straight","Make the animal run","Give random pain medicine"],answer:0,explanation:"Keep the animal quiet and minimize movement while arranging veterinary assessment."},
+    {question:"Why are regular weight checks useful in veterinary care?",options:["They help monitor growth, nutrition and health changes","They diagnose every disease by themselves","They replace physical exams","They are only useful for horses"],answer:0,explanation:"Weight trends can help detect growth, nutrition or health changes and are useful for medication dosing."},
+    {question:"Which statement best describes good animal welfare?",options:["Adequate food, water, shelter, health care, safety and humane handling","Keeping animals without water","Ignoring pain or illness","Preventing all normal movement"],answer:0,explanation:"Good welfare includes meeting physical and behavioural needs and providing humane care."}
+,
+{question:"Which temperature method is commonly used by veterinarians to assess an animal's body temperature?",options:["Thermometer","Stethoscope only","X-ray","Microscope only"],answer:0,explanation:"A thermometer is used to measure body temperature; the method depends on the species and clinical situation."},
+    {question:"What does a stethoscope help a veterinarian listen to?",options:["Heart and lung sounds","Bone length","Hair color","Blood type directly"],answer:0,explanation:"A stethoscope is commonly used to listen to heart, lung and other internal sounds."},
+    {question:"What is the main purpose of quarantine for a newly introduced animal?",options:["Reduce the risk of introducing infectious disease","Increase appetite immediately","Change the animal's breed","Replace vaccination"],answer:0,explanation:"Quarantine can help identify illness and reduce disease transmission to other animals."},
+    {question:"Which finding may suggest pain in an animal?",options:["Reluctance to move or unusual behavior","Normal relaxed posture only","Normal appetite only","Normal grooming only"],answer:0,explanation:"Pain may appear as changes in posture, movement, vocalization, appetite or behavior."},
+    {question:"What is deworming intended to control?",options:["Certain internal parasites","All viruses","All bacterial infections","Broken bones"],answer:0,explanation:"Deworming medicines are used against susceptible internal parasitic worms when indicated."},
+    {question:"Which parasite can commonly affect the intestinal tract of dogs and cats?",options:["Roundworm","Flea only","Mite only","Mosquito only"],answer:0,explanation:"Roundworms are intestinal parasites that can affect dogs and cats, especially young animals."},
+    {question:"Why should animal feces be disposed of safely?",options:["To reduce environmental contamination and infection risk","To increase parasite growth","To replace cleaning","To improve appetite"],answer:0,explanation:"Safe feces disposal helps reduce spread of parasites and infectious organisms."},
+    {question:"Which sign may indicate gastrointestinal illness?",options:["Persistent vomiting or diarrhea","Healthy appetite only","Normal stool only","Normal activity only"],answer:0,explanation:"Persistent vomiting or diarrhea can lead to dehydration and may require veterinary evaluation."},
+    {question:"What is the purpose of a vaccination program?",options:["Prepare the immune system against specific diseases","Treat every existing infection","Replace nutrition","Prevent all injuries"],answer:0,explanation:"Vaccines stimulate immune protection against specific infectious diseases; schedules vary by species and risk."},
+    {question:"What should be considered when calculating an animal's medication dose?",options:["Species, body weight, drug and veterinary prescription","Only the animal's color","Only the owner's age","Only the animal's name"],answer:0,explanation:"Medication dosing depends on factors such as species, weight, drug, condition and veterinary instructions."},
+    {question:"What is antimicrobial resistance?",options:["When microorganisms become less susceptible to medicines","When an animal gains weight","When bones become stronger","When vaccines expire"],answer:0,explanation:"Antimicrobial resistance occurs when microorganisms can survive medicines that previously worked against them."},
+    {question:"Which tool is commonly used to examine an animal's teeth and gums?",options:["Mouth examination and dental instruments","Thermometer only","Hoof rasp only","Ear tag only"],answer:0,explanation:"Veterinarians inspect the mouth and may use appropriate dental instruments to assess oral health."},
+    {question:"Why is colostrum important for many newborn mammals?",options:["It provides nutrients and important immune protection","It replaces oxygen","It is a vaccine injection","It prevents every disease"],answer:0,explanation:"Colostrum supplies energy and antibodies and is especially important soon after birth in many mammals."},
+    {question:"What is rumination?",options:["Re-chewing regurgitated feed in ruminants","Sleeping after exercise","A type of vaccination","A breathing disorder"],answer:0,explanation:"Ruminants such as cattle, buffalo, sheep and goats regurgitate and re-chew partially digested feed."},
+    {question:"Which animals are classic ruminants?",options:["Cattle, buffalo, sheep and goats","Dogs, cats and rabbits","Chickens and ducks","Horses and donkeys"],answer:0,explanation:"Cattle, buffalo, sheep and goats are ruminants with specialized digestive systems."},
+    {question:"Why is hoof care important in many livestock animals?",options:["It helps maintain mobility and reduces foot problems","It changes milk color","It replaces vaccination","It prevents all parasites"],answer:0,explanation:"Appropriate hoof care can help prevent overgrowth, injury and painful foot problems."},
+    {question:"Which condition is commonly associated with the respiratory system?",options:["Coughing and breathing difficulty","Broken tooth only","Skin pigment change only","Hoof overgrowth only"],answer:0,explanation:"Coughing, nasal discharge and breathing difficulty can be signs of respiratory disease."},
+    {question:"What is a fecal examination commonly used to detect?",options:["Certain intestinal parasites and their eggs or oocysts","Bone fractures","Heart rhythm directly","Hair color"],answer:0,explanation:"Fecal testing can help identify certain intestinal parasites and other gastrointestinal findings."},
+    {question:"What does an X-ray primarily help evaluate?",options:["Bones and some internal structures","Only behavior","Only appetite","Only vaccination status"],answer:0,explanation:"Radiographs are especially useful for evaluating bones and can also show selected internal structures."},
+    {question:"What is ultrasound commonly used for in veterinary medicine?",options:["Imaging soft tissues and organs","Measuring hoof length only","Counting hairs","Replacing all blood tests"],answer:0,explanation:"Ultrasound provides real-time images of soft tissues and organs and is used in many clinical situations."},
+    {question:"Why might a veterinarian perform a blood test?",options:["To assess blood cells, organs or other health indicators","To determine breed with certainty","To replace physical examination in every case","To measure body height only"],answer:0,explanation:"Blood tests can provide information about blood cells, organ function, inflammation and other health indicators."},
+    {question:"Which sign in a bird can warrant prompt veterinary attention?",options:["Difficulty breathing or marked weakness","Normal eating and activity","Normal feathers only","Normal droppings only"],answer:0,explanation:"Birds can deteriorate quickly, so breathing difficulty, severe weakness or other major changes deserve prompt assessment."},
+    {question:"What is an important part of poultry biosecurity?",options:["Clean equipment, controlled movement and disease prevention","Sharing dirty equipment between flocks","Ignoring sick birds","Unlimited contact with wild birds"],answer:0,explanation:"Biosecurity reduces disease introduction and spread through hygiene, controlled movement and appropriate prevention."},
+    {question:"Why is water quality important for poultry?",options:["Poor-quality water can affect health and encourage disease problems","Water has no effect on health","Only color matters","It replaces balanced feed"],answer:0,explanation:"Clean, accessible water is essential for hydration and normal poultry health."},
+    {question:"What should be provided to aquarium fish besides suitable food?",options:["Appropriate water quality, temperature and filtration","Only bright lights","Unlimited food","Dry bedding"],answer:0,explanation:"Aquarium fish require species-appropriate water quality, temperature, oxygenation and filtration as needed."},
+    {question:"Why should overfeeding aquarium fish be avoided?",options:["It can pollute the water and harm fish health","It guarantees faster healthy growth","It replaces filtration","It prevents all diseases"],answer:0,explanation:"Uneaten food can degrade water quality, so feeding should be appropriate for the species and amount consumed."},
+    {question:"What is a basic requirement for many pet rabbits?",options:["High-fiber diet with appropriate hay and fresh water","Only sugary treats","No exercise","No access to hay"],answer:0,explanation:"Rabbits need a high-fiber diet, commonly including good-quality hay, along with fresh water and suitable care."},
+    {question:"Why is enrichment useful for captive animals?",options:["It supports natural behaviors and mental well-being","It replaces veterinary treatment","It eliminates the need for food","It guarantees no disease"],answer:0,explanation:"Appropriate enrichment encourages natural behaviors and can support physical and behavioral well-being."},
+    {question:"What is a body condition score used for?",options:["Assessing an animal's body fat and nutritional condition","Diagnosing every disease","Measuring blood pressure directly","Identifying breed with certainty"],answer:0,explanation:"Body condition scoring helps assess whether an animal is under-conditioned, ideal or over-conditioned."},
+    {question:"When should an animal with sudden collapse be assessed?",options:["Immediately as a potential emergency","Only after several weeks","Only when it asks for food","Never if it is young"],answer:0,explanation:"Sudden collapse can have serious causes and should be treated as an emergency requiring prompt veterinary attention."}
+];
+
+let vetQuizIndex = 0;
+let vetQuizScore = 0;
+let vetQuizAnswered = false;
+
+const vetQuiz = document.getElementById("vetQuiz");
+const vetQuizStart = document.getElementById("vetQuizStart");
+const vetQuizQuestion = document.getElementById("vetQuizQuestion");
+const vetQuizOptions = document.getElementById("vetQuizOptions");
+const vetQuizProgress = document.getElementById("vetQuizProgress");
+const vetQuizResult = document.getElementById("vetQuizResult");
+const vetQuizNext = document.getElementById("vetQuizNext");
+const vetQuizFeedback = document.getElementById("vetQuizFeedback");
+
+function renderVetQuizQuestion(){
+    if(!vetQuizQuestion || !vetQuizOptions) return;
+    const q=vetQuizQuestions[vetQuizIndex];
+    vetQuizAnswered=false;
+    vetQuizQuestion.textContent=q.question;
+    vetQuizProgress.textContent=`Question ${vetQuizIndex+1} of ${vetQuizQuestions.length}`;
+    vetQuizFeedback.textContent="";
+    vetQuizFeedback.className="vet-quiz-feedback";
+    vetQuizNext.disabled=true;
+    vetQuizNext.textContent=vetQuizIndex===vetQuizQuestions.length-1 ? "See Result" : "Next Question";
+    vetQuizOptions.innerHTML="";
+    q.options.forEach((option,i)=>{
+        const btn=document.createElement("button");
+        btn.type="button";
+        btn.className="vet-quiz-option";
+        btn.innerHTML=`<span class="vet-option-letter">${String.fromCharCode(65+i)}</span><span>${option}</span>`;
+        btn.addEventListener("click",()=>answerVetQuiz(i));
+        vetQuizOptions.appendChild(btn);
     });
-    return rows;
 }
-const allBreeds = allBreedRecords();
 
-if (breedAnimalFilter) {
-    breedLibraryData.forEach(function(animal) {
-        const option=document.createElement("option");
-        option.value=animal.animal;
-        option.textContent=animal.icon+" "+animal.animal;
-        breedAnimalFilter.appendChild(option);
+function answerVetQuiz(selected){
+    if(vetQuizAnswered) return;
+    vetQuizAnswered=true;
+    const q=vetQuizQuestions[vetQuizIndex];
+    const buttons=[...vetQuizOptions.querySelectorAll("button")];
+    buttons.forEach((btn,i)=>{
+        btn.disabled=true;
+        if(i===q.answer) btn.classList.add("correct");
+        if(i===selected && i!==q.answer) btn.classList.add("wrong");
     });
-}
-
-function escapeHtml(value){
-    return String(value||"").replace(/[&<>'"]/g,function(ch){return ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[ch]);});
-}
-
-function wikiSearchUrl(title){
-    return "https://en.wikipedia.org/wiki/"+encodeURIComponent(title.replace(/ /g,"_"));
-}
-
-/* Reliable breed lookup.  The old search endpoint sometimes returns a generic
-   species page (for example "Dog"), which is why every breed could show the
-   same picture/information.  We now try the exact Wikipedia page first and
-   only then use a targeted search. */
-async function getWikiData(item){
-    const key=item.animal+"::"+item.breed;
-    if(wikiCache.has(key)) return wikiCache.get(key);
-    const promise=(async function(){
-        const timeout=9000;
-        const fetchJson=async function(url){
-            const controller=new AbortController();
-            const timer=setTimeout(()=>controller.abort(),timeout);
-            try{
-                const res=await fetch(url,{signal:controller.signal,headers:{"Accept":"application/json"}});
-                if(!res.ok) return null;
-                return await res.json();
-            }catch(e){return null;}finally{clearTimeout(timer);}
-        };
-
-        try{
-            const exactTitle=item.breed.replace(/\s+/g,"_");
-            const exact="https://en.wikipedia.org/api/rest_v1/page/summary/"+encodeURIComponent(exactTitle);
-            const exactData=await fetchJson(exact);
-            if(exactData && exactData.type!=="https://mediawiki.org/wiki/HyperSwitch/errors/not_found" &&
-               exactData.extract && exactData.title &&
-               (exactData.thumbnail || exactData.originalimage)){
-                return {
-                    title:exactData.title,
-                    extract:exactData.extract,
-                    image:(exactData.originalimage&&exactData.originalimage.source)||(exactData.thumbnail&&exactData.thumbnail.source)||"",
-                    url:exactData.content_urls&&exactData.content_urls.desktop&&exactData.content_urls.desktop.page || wikiSearchUrl(exactData.title)
-                };
-            }
-        }catch(e){}
-
-        try{
-            const q=encodeURIComponent('"'+item.breed+'" '+item.animal);
-            const url="https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch="+q+"&gsrlimit=5&prop=pageimages|extracts&piprop=thumbnail&pithumbsize=900&exintro=1&explaintext=1&format=json&origin=*";
-            const data=await fetchJson(url);
-            const pages=data&&data.query&&data.query.pages?Object.values(data.query.pages):[];
-            const clean=pages.filter(function(page){
-                const t=(page.title||"").toLowerCase();
-                return t.includes(item.breed.toLowerCase().split(" ")[0]);
-            });
-            const page=clean[0]||pages[0];
-            if(page && page.extract){
-                return {title:page.title,extract:page.extract,image:page.thumbnail&&page.thumbnail.source?page.thumbnail.source:"",url:wikiSearchUrl(page.title)};
-            }
-        }catch(e){}
-        return null;
-    })();
-    wikiCache.set(key,promise);
-    return promise;
-}
-
-function speciesReference(item){
-    const a=item.animal;
-    const map={
-      Dog:{purpose:"Companion, working and service animal",care:"Balanced complete diet matched to life stage, size and activity; regular exercise, dental care, parasite prevention and vaccination.",health:"Dental disease, obesity, skin disease, parasites and gastrointestinal disorders."},
-      Cat:{purpose:"Companion animal",care:"Complete high-protein cat diet, fresh water, litter hygiene, enrichment and routine veterinary care.",health:"Dental disease, obesity, urinary disease, parasites and respiratory infections."},
-      Cow:{purpose:"Milk, meat and draught production depending on breed",care:"Good forage/roughage with balanced concentrates, minerals and constant access to clean water; shade and hoof care are important.",health:"Mastitis, foot-and-mouth disease, parasites, bloat, metabolic and reproductive disorders."},
-      Buffalo:{purpose:"Milk, meat and draught production",care:"Green and dry fodder, balanced concentrate/minerals, clean water, shade and heat-stress management.",health:"Mastitis, parasites, heat stress, metabolic and reproductive disorders."},
-      Goat:{purpose:"Milk, meat, fibre or breeding depending on breed",care:"Forage/browse, hay, suitable concentrate and minerals; good ventilation, hoof trimming and parasite control.",health:"PPR, pneumonia, enterotoxemia, parasites and hoof disorders."},
-      Sheep:{purpose:"Wool, meat, milk or breeding depending on breed",care:"Pasture, forage and hay with suitable supplements; clean water, hoof care, parasite control and shelter.",health:"Foot disease, internal parasites, pneumonia and enterotoxemia."},
-      Horse:{purpose:"Sport, recreation, work or breeding",care:"Forage should form the dietary base; concentrates according to workload, regular hoof/dental care, exercise and clean water.",health:"Colic, lameness, dental disease, respiratory and skin disorders."},
-      Donkey:{purpose:"Working, transport and companion animal",care:"High-fibre forage with controlled energy intake, clean water, routine hoof and dental care.",health:"Hoof problems, dental disease, parasites and obesity-related disorders."},
-      Camel:{purpose:"Transport, milk, meat and breeding",care:"Browse, shrubs, grasses and appropriate supplements with clean water; provide shade and monitor body condition.",health:"Parasites, respiratory disease, skin disorders and nutritional problems."},
-      Rabbit:{purpose:"Companion, meat, fibre or exhibition animal",care:"Unlimited good-quality hay, suitable leafy greens, measured pellets, clean water and dental monitoring.",health:"Dental disease, gastrointestinal stasis, parasites and respiratory disease."},
-      Pig:{purpose:"Meat production or companion animal",care:"Balanced complete ration, clean water, temperature control, hygiene and appropriate housing.",health:"Respiratory disease, gastrointestinal disease, parasites and reproductive disorders."},
-      Chicken:{purpose:"Egg, meat, breeding or exhibition",care:"Complete poultry ration, clean water, dry housing, ventilation, biosecurity and parasite control.",health:"Respiratory disease, coccidiosis, parasites and infectious diseases."},
-      Duck:{purpose:"Egg, meat, ornamental or companion",care:"Balanced waterfowl ration, clean drinking water, dry shelter and safe access to bathing water where appropriate.",health:"Respiratory disease, parasites, foot problems and nutritional disorders."},
-      Turkey:{purpose:"Meat, breeding or exhibition",care:"Complete turkey feed, clean water, dry ventilated housing and strong biosecurity.",health:"Respiratory disease, parasites, enteric disease and nutritional disorders."},
-      Pigeon:{purpose:"Racing, utility, ornamental or companion",care:"Balanced seed/pellet diet with minerals, clean water, loft hygiene and parasite control.",health:"Respiratory disease, canker, parasites and nutritional problems."},
-      Parrot:{purpose:"Companion or aviary bird",care:"Species-appropriate pellets plus varied vegetables/fruit, clean water, enrichment, safe housing and regular avian-vet care.",health:"Nutritional disease, respiratory disease, feather disorders and parasites."},
-      "Aquarium Fish":{purpose:"Ornamental aquarium fish",care:"Species-appropriate feed, stable water quality, filtration, correct temperature and regular water testing.",health:"Water-quality disease, parasites, bacterial disease and nutritional disorders."},
-      Turtle:{purpose:"Companion, conservation or ornamental reptile",care:"Species-specific diet, UVB/heat, correct humidity and enclosure, clean water and safe temperature gradients.",health:"Shell disease, metabolic bone disease, respiratory disease and parasites."},
-      "Guinea Pig":{purpose:"Companion animal",care:"Unlimited hay, vitamin-C source, suitable vegetables/pellets, clean water and dental monitoring.",health:"Dental disease, vitamin-C deficiency, skin disease and gastrointestinal disorders."},
-      Hamster:{purpose:"Companion animal",care:"Balanced hamster diet, safe bedding, enrichment, appropriate wheel and clean water.",health:"Dental disease, skin disease, respiratory problems and obesity."},
-      Deer:{purpose:"Wildlife, conservation or managed production depending on species",care:"Species-appropriate browse, grasses, safe habitat and minimal stress; wildlife should be managed by qualified professionals.",health:"Parasites, nutritional problems, injuries and infectious disease."},
-      Yak:{purpose:"Milk, meat, fibre and working animal depending on population",care:"Grazing on grasses and vegetation with supplementation when needed; shelter, clean water and parasite control.",health:"Parasites, respiratory disease, nutritional problems and injuries."}
-    };
-    return map[a]||{purpose:"Breed/type reference",care:"Use species-appropriate nutrition, housing, enrichment and veterinary preventive care.",health:"Health risks vary with genetics, age, environment and management."};
-}
-
-function detailedAnimalInfo(item){
-    const a=item.animal;
-    const common={
-      Dog:{size:"Small to giant; varies by breed",lifespan:"About 10–15 years",diet:"Complete balanced dog food appropriate to age, size and activity; fresh water always available.",housing:"Safe, clean living area with shade/shelter, exercise space and protection from extreme heat/cold.",behaviour:"Social, trainable and highly variable by breed; needs exercise, mental stimulation and positive interaction.",preventive:"Core vaccination plan, rabies where required, parasite prevention, dental care, weight checks and routine examinations.",emergency:"Difficulty breathing, collapse, seizures, repeated vomiting, severe bleeding, inability to urinate, poisoning or major injury.",care:"Daily exercise and enrichment, regular grooming according to coat type, dental hygiene, nail care and monitoring of weight."},
-      Cat:{size:"Small to medium; varies by breed",lifespan:"About 12–18 years; some live longer",diet:"Complete balanced cat food with appropriate protein and calories; fresh water and portion control.",housing:"Secure indoor environment or supervised safe outdoor access, litter area, resting places, scratching and climbing enrichment.",behaviour:"Territorial, curious and often independent; benefits from predictable routines, play and hiding/resting spaces.",preventive:"Vaccination, parasite control, dental checks, weight monitoring and routine veterinary examinations.",emergency:"Breathing difficulty, collapse, repeated vomiting, suspected poisoning, inability to urinate, severe trauma or sudden weakness.",care:"Litter hygiene, daily play, coat care as needed, nail care and regular monitoring of appetite, water intake and toilet habits."},
-      Cow:{size:"Adult body size varies widely by breed; often 400–800+ kg",lifespan:"Often about 15–20 years with good management",diet:"Forage/roughage as the dietary base with balanced concentrates, minerals and continuous clean water.",housing:"Dry, well-ventilated shelter with shade, comfortable resting area, clean flooring and safe access to feed and water.",behaviour:"Herd-oriented ruminant; calm handling and low-stress movement improve welfare and safety.",preventive:"Vaccination according to local veterinary program, parasite control, hoof care, mastitis monitoring, reproductive records and biosecurity.",emergency:"Severe bloat, inability to stand, difficult calving, heavy bleeding, breathing distress, severe injury or suspected poisoning.",care:"Observe appetite, rumination, manure, milk production and gait; maintain clean bedding, hoof health and heat-stress protection."},
-      Buffalo:{size:"Large; commonly about 400–900+ kg depending on breed and sex",lifespan:"Often about 15–20 years",diet:"Green and dry fodder with balanced concentrate/minerals and plenty of clean water.",housing:"Cool, shaded, well-ventilated housing with clean resting areas; access to safe water for cooling can be beneficial.",behaviour:"Herd animal; generally steady but strong, so calm low-stress handling and secure facilities are important.",preventive:"Vaccination, parasite control, hoof care, mastitis checks, reproductive monitoring and strong farm biosecurity.",emergency:"Severe bloat, calving difficulty, inability to stand, heat-stress collapse, major injury or suspected poisoning.",care:"Monitor body condition, appetite, rumination, milk yield and gait; provide shade and cooling during hot weather."},
-      Goat:{size:"Small to medium; highly breed-dependent",lifespan:"Often about 10–15 years",diet:"Browse, forage and hay with suitable concentrate/mineral supplementation; clean water at all times.",housing:"Dry, clean, well-ventilated shelter with secure fencing, shade and elevated/dry resting areas.",behaviour:"Active, social and curious; needs space to move, climb where safe and interact with other goats.",preventive:"Vaccination based on local risk, parasite monitoring, hoof trimming, nutrition management and routine health checks.",emergency:"Severe breathing difficulty, collapse, inability to eat, severe bloat, difficult kidding, major injury or poisoning.",care:"Regular hoof checks, body-condition monitoring, clean feed/water, parasite management and observation of rumination and droppings."},
-      Sheep:{size:"Small to medium; varies by breed",lifespan:"Often about 10–12 years",diet:"Pasture, forage and hay with suitable mineral supplementation and concentrates when required.",housing:"Dry shelter with good ventilation, clean bedding, shade and secure fencing; avoid prolonged wet conditions.",behaviour:"Flock-oriented and generally social; calm handling reduces stress and injury.",preventive:"Vaccination, parasite monitoring, hoof care, flystrike prevention where relevant and regular flock observation.",emergency:"Severe bloat, inability to stand, difficult lambing, severe bleeding, respiratory distress or suspected poisoning.",care:"Check body condition, feet, fleece/skin, appetite and flock behaviour; keep feed and water areas clean."},
-      Horse:{size:"About pony-sized to draft-sized; breed-dependent",lifespan:"Often about 25–30 years",diet:"Forage should form the base of the diet; concentrates only as needed for workload and body condition.",housing:"Safe, well-ventilated stable or paddock with shade/shelter, clean water, secure fencing and suitable footing.",behaviour:"Social, alert and sensitive prey animal; consistent calm handling and appropriate exercise are important.",preventive:"Vaccination, deworming based on veterinary risk assessment, dental care, hoof trimming/shoeing and routine examinations.",emergency:"Colic signs, severe lameness, breathing distress, choke, collapse, major wound or inability to bear weight.",care:"Daily observation, regular hoof and dental care, gradual diet changes, exercise and monitoring for colic or lameness."},
-      Donkey:{size:"Small to large; breed/type dependent",lifespan:"Often about 25–35 years",diet:"High-fibre forage with controlled energy intake; avoid excessive rich feed and obesity.",housing:"Dry shelter, shade, secure fencing and firm but comfortable areas for movement and rest.",behaviour:"Intelligent, social and often cautious; patient, reward-based handling works best.",preventive:"Hoof and dental care, parasite control based on risk, vaccination and regular body-condition checks.",emergency:"Severe colic-like signs, inability to stand, breathing difficulty, major injury or suspected poisoning.",care:"Frequent hoof checks, dental examinations, weight monitoring and careful diet management are especially important."},
-      Camel:{size:"Large; adult dromedaries often around 400–600+ kg",lifespan:"Often about 35–45 years",diet:"Browse, shrubs, grasses and suitable supplements; clean water and adequate minerals.",housing:"Open, well-ventilated areas with shade, safe fencing and protection from extreme weather.",behaviour:"Social, intelligent and adapted to arid environments; calm handling is essential because of their size and strength.",preventive:"Parasite control, vaccination according to local disease risk, skin/foot checks, dental observation and routine veterinary care.",emergency:"Severe dehydration, breathing distress, inability to stand, major injury, poisoning or difficult parturition.",care:"Monitor body condition, hydration, appetite, gait, skin and feet; provide shade and avoid unnecessary heat stress."},
-      Rabbit:{size:"Small; varies by breed",lifespan:"Often about 8–12 years",diet:"Unlimited good-quality hay, suitable leafy greens, measured pellets and constant clean water.",housing:"Large, clean, well-ventilated enclosure with non-slip flooring, hiding areas and daily movement space.",behaviour:"Social, alert and often prey-sensitive; needs hiding places, chewing enrichment and gentle handling.",preventive:"Dental checks, parasite control, vaccination where locally recommended and routine weight/appetite monitoring.",emergency:"Not eating, no droppings, breathing difficulty, severe diarrhea, collapse, head tilt with severe signs or major trauma.",care:"Daily appetite and droppings checks, hay access, dental monitoring, nail care and strict hygiene."},
-      Pig:{size:"Small companion types to large farm pigs; breed-dependent",lifespan:"Farm pigs often shorter-lived; companion pigs can reach 10–15+ years",diet:"Balanced complete ration with clean water; portion control is important to prevent obesity.",housing:"Clean, dry, well-ventilated housing with shade/cooling, secure fencing and appropriate rooting/enrichment opportunities.",behaviour:"Intelligent, social and exploratory; needs enrichment and predictable handling.",preventive:"Vaccination and parasite programs based on local risk, hoof/skin checks, weight monitoring and biosecurity.",emergency:"Severe breathing difficulty, collapse, inability to eat/drink, major injury, severe abdominal signs or poisoning.",care:"Maintain hygiene, temperature control, balanced feeding and daily observation of appetite, stool and behaviour."},
-      Chicken:{size:"Small poultry; varies by breed",lifespan:"Often about 5–10 years depending on type and management",diet:"Complete poultry ration matched to age/production stage with clean water; avoid unbalanced treats.",housing:"Dry, predator-proof, well-ventilated coop with clean litter, perches and appropriate nesting areas.",behaviour:"Social flock bird with strong pecking-order behaviour; needs space and enrichment.",preventive:"Vaccination according to local program, biosecurity, parasite monitoring, clean housing and isolation of sick birds.",emergency:"Severe breathing difficulty, inability to stand, uncontrolled bleeding, sudden neurologic signs or suspected poisoning.",care:"Check flock appetite, droppings, egg production, feathers and breathing daily; keep litter dry and clean."},
-      Duck:{size:"Small to large waterfowl; breed-dependent",lifespan:"Often about 8–12 years",diet:"Balanced waterfowl feed with clean drinking water; niacin requirements are important in growing birds.",housing:"Dry, predator-safe shelter with ventilation and safe access to bathing water where appropriate; prevent slippery footing.",behaviour:"Social, active and inquisitive; usually does best with compatible flock companions.",preventive:"Biosecurity, parasite control, vaccination where locally indicated and clean water management.",emergency:"Breathing distress, inability to stand/swim normally, severe wounds, neurologic signs or poisoning.",care:"Keep drinking water clean, housing dry and monitor feet, legs, feathers, appetite and droppings."},
-      Turkey:{size:"Medium to large poultry; production breeds can be heavy",lifespan:"Often several years; varies greatly by production system",diet:"Complete turkey feed appropriate to age and production stage with clean water.",housing:"Dry, clean, well-ventilated housing with enough floor space, shade and strong predator/biosecurity protection.",behaviour:"Social flock bird; males can become territorial and require safe handling.",preventive:"Strong biosecurity, vaccination where locally recommended, parasite control and clean housing.",emergency:"Respiratory distress, collapse, severe diarrhea, inability to stand, neurologic signs or poisoning.",care:"Monitor flock appetite, droppings, breathing, mobility and feather condition; keep litter dry."},
-      Pigeon:{size:"Small to medium bird; type-dependent",lifespan:"Often about 5–15 years in managed settings",diet:"Balanced pigeon grain/pellet mix with appropriate minerals and clean water.",housing:"Clean, dry, well-ventilated loft/aviary protected from predators and overcrowding.",behaviour:"Social, active and strongly oriented to flock and home territory; racing types need conditioning.",preventive:"Loft hygiene, parasite control, quarantine of new birds and vaccination where locally recommended.",emergency:"Severe breathing difficulty, inability to fly/stand, heavy bleeding, neurologic signs or poisoning.",care:"Regular loft cleaning, fresh water, balanced feed and observation of droppings, breathing and flight ability."},
-      Parrot:{size:"Small to large; species-dependent",lifespan:"Highly variable; many species live 10–50+ years",diet:"Species-appropriate formulated pellets plus varied vegetables and limited fruit; avoid toxic foods.",housing:"Spacious secure cage/aviary with perches, toys, bathing opportunities, safe light and good ventilation.",behaviour:"Highly intelligent and social; requires daily interaction, enrichment and safe opportunities to forage/play.",preventive:"Routine avian-vet examinations, nail/beak assessment when needed, nutrition review and quarantine of new birds.",emergency:"Open-mouth breathing, tail bobbing, collapse, bleeding, toxin exposure, inability to perch or sudden severe weakness.",care:"Daily enrichment, clean food/water dishes, safe chewing toys, sleep routine and monitoring of droppings and appetite."},
-      "Aquarium Fish":{size:"Highly species-dependent",lifespan:"Ranges from months to many years depending on species",diet:"Species-appropriate flakes, pellets or frozen/live foods in measured amounts; avoid overfeeding.",housing:"Correct tank size, filtration, aeration, temperature, water chemistry, hiding areas and compatible tank mates.",behaviour:"Varies by species; some are schooling, territorial or solitary. Stable conditions reduce stress.",preventive:"Regular water testing, quarantine of new fish, gradual acclimation, filter maintenance and controlled stocking.",emergency:"Rapid gasping, loss of balance, sudden mass deaths, severe bloating or obvious lesions; test water immediately.",care:"Perform routine partial water changes, remove uneaten food, maintain filtration and monitor temperature and water parameters."},
-      Turtle:{size:"Small to large depending on species",lifespan:"Often 20–50+ years; some species live much longer",diet:"Species-specific diet; may include leafy greens, aquatic foods or commercial reptile diets depending on species.",housing:"Correct enclosure/tank size, UVB, heat gradient, humidity and clean water as required by species.",behaviour:"Generally quiet but species-specific; needs appropriate basking, hiding and swimming/foraging opportunities.",preventive:"Routine reptile-vet care, UVB/temperature checks, hygiene, nutrition review and parasite assessment when indicated.",emergency:"Breathing difficulty, severe shell injury, inability to right itself, profound weakness, bleeding or suspected poisoning.",care:"Measure temperatures and UVB setup, keep water/enclosure clean and monitor appetite, shell and activity."},
-      "Guinea Pig":{size:"Small; commonly about 700–1,200 g",lifespan:"Often about 4–8 years",diet:"Unlimited hay, vitamin-C-rich vegetables and appropriate guinea-pig pellets with fresh water.",housing:"Large, clean, well-ventilated enclosure with solid flooring, hiding spaces and daily movement.",behaviour:"Social, vocal and generally gentle; compatible companionship and predictable routines are beneficial.",preventive:"Dental checks, nail care, weight monitoring, parasite/skin checks and veterinary examinations.",emergency:"Not eating, difficulty breathing, severe diarrhea, collapse, inability to urinate or major trauma.",care:"Daily hay and water, vitamin-C source, clean bedding, gentle handling and frequent weight/appetite checks."},
-      Hamster:{size:"Small; species-dependent",lifespan:"Often about 1.5–3 years",diet:"Balanced hamster food with controlled treats and constant clean water.",housing:"Secure, well-ventilated enclosure with deep safe bedding, hiding areas, enrichment and an appropriately sized wheel.",behaviour:"Mostly nocturnal; many are solitary, and handling should respect their sleep cycle.",preventive:"Dental monitoring, weight checks, enclosure hygiene and veterinary care for persistent skin/respiratory signs.",emergency:"Breathing difficulty, collapse, severe injury, prolonged diarrhea, inability to eat or suspected poisoning.",care:"Provide deep bedding, safe chewing items, enrichment, clean water and a consistent day/night routine."},
-      Deer:{size:"Medium to very large depending on species",lifespan:"Often about 10–20 years in managed settings; species-dependent",diet:"Species-appropriate browse, leaves, grasses and supplemental feed only when needed.",housing:"Large secure habitat with shade, shelter, safe fencing, clean water and minimal disturbance.",behaviour:"Alert herd animals in many species; stress and sudden handling can cause injury.",preventive:"Wildlife-specific veterinary monitoring, parasite surveillance, nutrition assessment and biosecurity where managed.",emergency:"Severe injury, inability to stand, respiratory distress, abnormal neurologic signs or suspected poisoning.",care:"Observe from a safe distance, maintain habitat quality and seek wildlife professionals for sick or injured animals."},
-      Yak:{size:"Large; adult animals commonly several hundred kilograms",lifespan:"Often about 15–25 years",diet:"Grazing and browse with forage supplementation when seasonal supply is inadequate; clean water.",housing:"Cold-tolerant but still needs dry shelter, shade, secure fencing and protection from extreme weather.",behaviour:"Herd-oriented and generally adapted to high-altitude conditions; calm handling is important.",preventive:"Parasite control, vaccination according to local risk, hoof/skin checks and routine body-condition monitoring.",emergency:"Severe breathing difficulty, inability to stand, major injury, severe digestive signs or suspected poisoning.",care:"Monitor body condition, appetite, gait and coat; maintain forage quality, clean water and safe handling facilities."}
-    };
-    return common[a] || {size:"Varies by breed/type",lifespan:"Varies by species and management",diet:speciesReference(item).care,housing:"Provide species-appropriate, clean, safe and well-ventilated housing with suitable temperature and enrichment.",behaviour:"Behaviour varies by species and breed; use calm, low-stress handling.",preventive:"Routine veterinary checks, vaccination and parasite prevention according to species and local veterinary advice.",emergency:"Breathing difficulty, collapse, severe bleeding, poisoning, inability to eat/drink or major injury.",care:speciesReference(item).care};
-}
-
-function makeBreedProfile(item,wiki){
-    const base=speciesReference(item);
-    const title=wiki&&wiki.title?wiki.title:item.breed;
-    const overview=(wiki&&wiki.extract)?wiki.extract:(item.breed+" is a " + item.animal.toLowerCase()+" breed/type. " + base.purpose + ". Breed-specific characteristics can vary between lines and individuals.");
-    return {title:title,extract:overview,image:wiki&&wiki.image?wiki.image:"",url:wiki&&wiki.url?wiki.url:wikiSearchUrl(item.breed),purpose:base.purpose,care:base.care,health:base.health};
-}
-
-async function hydrateCardImage(card,item){
-    const img=card.querySelector("img");
-    if(!img) return;
-    img.classList.add("is-loading");
-    const data=await getWikiData(item);
-    if(data && data.image){
-        img.src=data.image;
-        img.classList.remove("is-fallback");
-        img.alt=item.breed+" photo";
-        img.title="Breed photo reference from Wikipedia";
-    } else {
-        img.classList.add("is-fallback");
-        img.alt=item.breed+" (species reference photo)";
+    if(selected===q.answer){
+        vetQuizScore++;
+        vetQuizFeedback.textContent="Correct! "+q.explanation;
+        vetQuizFeedback.classList.add("good");
+    }else{
+        vetQuizFeedback.textContent="Not quite. "+q.explanation;
+        vetQuizFeedback.classList.add("bad");
     }
-    img.classList.remove("is-loading");
+    vetQuizNext.disabled=false;
 }
 
-function renderBreedLibrary() {
-    if (!breedGrid) return;
-    const q=(breedSearch?.value || "").toLowerCase().trim();
-    const animal=selectedAnimal;
-    const rows=allBreeds.filter(function(item){
-        const text=(item.breed+" "+item.animal).toLowerCase();
-        return (animal==="all" || item.animal===animal) && (!q || text.includes(q));
+function showVetQuizResult(){
+    const total=vetQuizQuestions.length;
+    const percent=Math.round((vetQuizScore/total)*100);
+    let message="Keep learning and practicing your veterinary basics.";
+    if(percent>=80) message="Excellent veterinary knowledge! Keep building your clinical understanding.";
+    else if(percent>=60) message="Good work! A little more practice will make your veterinary basics stronger.";
+    vetQuizQuestion.textContent=`You scored ${vetQuizScore}/${total} (${percent}%).`;
+    vetQuizProgress.textContent="Quiz complete";
+    vetQuizOptions.innerHTML="";
+    vetQuizFeedback.textContent=message;
+    vetQuizFeedback.className="vet-quiz-feedback result-good";
+    vetQuizNext.disabled=false;
+    vetQuizNext.textContent="Restart Quiz";
+    vetQuizAnswered=true;
+}
+
+if(vetQuizStart){
+    vetQuizStart.addEventListener("click",()=>{
+        vetQuizIndex=0;
+        vetQuizScore=0;
+        vetQuiz.style.display="block";
+        vetQuizStart.style.display="none";
+        renderVetQuizQuestion();
     });
-    breedCount.textContent=rows.length+" breeds/types";
-    selectedAnimalTitle.textContent = animal==="all" ? "🐾 All Animal Breeds" : ((breedLibraryData.find(x=>x.animal===animal)?.icon||"🐾")+" "+animal+" Breeds");
-    breedGrid.innerHTML="";
-    if(!rows.length){ breedGrid.innerHTML='<div class="breed-empty">No breed found. Try another search.</div>'; return; }
-    rows.forEach(function(item){
-        const card=document.createElement("article");
-        card.className="breed-card";
-        card.innerHTML='<img class="breed-card-image is-loading" src="'+escapeHtml(item.image)+'" alt="'+escapeHtml(item.breed)+'" loading="lazy"><div class="breed-card-body"><span class="breed-animal">'+escapeHtml(item.icon)+" "+escapeHtml(item.animal)+'</span><h3>'+escapeHtml(item.breed)+'</h3><p>Breed-specific photo, overview, care and health reference.</p><span class="breed-view">View detailed information →</span></div>';
-        card.addEventListener("click",function(){ openBreed(item); });
-        breedGrid.appendChild(card);
-        hydrateCardImage(card,item);
-    });
 }
 
-async function openBreed(item){
-    const base=speciesReference(item);
-    const animalInfo=detailedAnimalInfo(item);
-    const modalImage=document.getElementById("breedModalImage");
-    modalImage.src=item.image;
-    modalImage.alt=item.breed;
-    document.getElementById("breedModalAnimal").textContent=item.icon+" "+item.animal;
-    document.getElementById("breedModalTitle").textContent=item.breed;
-    document.getElementById("breedAnimal").textContent=item.animal;
-    document.getElementById("breedCategory").textContent="Breed / type profile";
-    document.getElementById("breedOverview").textContent=item.breed+" is a "+item.animal.toLowerCase()+" breed/type. Loading breed-specific reference information…";
-    document.getElementById("breedSize").textContent=animalInfo.size;
-    document.getElementById("breedLifespan").textContent=animalInfo.lifespan;
-    document.getElementById("breedDiet").textContent=animalInfo.diet;
-    document.getElementById("breedHousing").textContent=animalInfo.housing;
-    document.getElementById("breedBehaviour").textContent=animalInfo.behaviour;
-    document.getElementById("breedPreventive").textContent=animalInfo.preventive;
-    document.getElementById("breedNutrition").textContent=animalInfo.care;
-    document.getElementById("breedHealth").textContent=base.health;
-    document.getElementById("breedEmergency").textContent=animalInfo.emergency;
-    document.getElementById("breedPurposeStatic").textContent=base.purpose;
-    breedModal.classList.add("show");
-    breedModal.setAttribute("aria-hidden","false");
-
-    const title=document.getElementById("breedModalTitle");
-    const oldStatus=document.getElementById("breedWikiStatus"); if(oldStatus) oldStatus.remove();
-    const oldLink=document.getElementById("breedWikiLink"); if(oldLink) oldLink.remove();
-    title.insertAdjacentHTML("afterend",'<div id="breedWikiStatus" class="breed-loading"><span class="breed-spinner"></span> Loading breed-specific photo &amp; reference…</div>');
-
-    const wiki=await getWikiData(item);
-    const data=makeBreedProfile(item,wiki);
-    const status=document.getElementById("breedWikiStatus"); if(status) status.remove();
-    if(data.image) modalImage.src=data.image;
-    document.getElementById("breedOverview").textContent=data.extract;
-
-    const link=document.createElement("a");
-    link.id="breedWikiLink"; link.href=data.url; link.target="_blank"; link.rel="noopener noreferrer";
-    link.textContent="Open full breed reference →";
-    link.style.cssText="display:inline-block;margin-top:14px;color:#0b7285;font-weight:700;";
-    document.querySelector(".breed-modal-box").appendChild(link);
-}
-
-function closeBreed(){ if(breedModal){ breedModal.classList.remove("show"); breedModal.setAttribute("aria-hidden","true"); } }
-if(breedSearch) breedSearch.addEventListener("input",renderBreedLibrary);
-if(breedAnimalFilter) breedAnimalFilter.addEventListener("change",function(){ selectedAnimal=this.value; renderBreedLibrary(); });
-if(breedClose) breedClose.addEventListener("click",closeBreed);
-if(breedModal) breedModal.addEventListener("click",function(e){ if(e.target===breedModal) closeBreed(); });
-document.addEventListener("keydown",function(e){ if(e.key==="Escape") closeBreed(); });
-
-document.querySelectorAll(".animal-card").forEach(function(card){
-    card.style.cursor="pointer";
-    card.setAttribute("tabindex","0");
-    card.setAttribute("role","button");
-    const open=function(e){
-        if(e && e.target && e.target.closest("a,button,input,select,textarea")) return;
-        const h=card.querySelector("h3"); if(!h) return;
-        const name=h.textContent.replace(/^[^A-Za-z]+/u,"").trim();
-        const match=breedLibraryData.find(x=>x.animal===name);
-        if(match){
-            const animalPages={Dog:"animal_breeds/dog-breeds.html",Cat:"animal_breeds/cat-breeds.html",Cow:"animal_breeds/cow-breeds.html",Buffalo:"animal_breeds/buffalo-breeds.html",Goat:"animal_breeds/goat-breeds.html",Sheep:"animal_breeds/sheep-breeds.html",Horse:"animal_breeds/horse-breeds.html",Donkey:"animal_breeds/donkey-breeds.html",Camel:"animal_breeds/camel-breeds.html",Rabbit:"animal_breeds/rabbit-breeds.html",Pig:"animal_breeds/pig-breeds.html",Chicken:"animal_breeds/chicken-breeds.html",Duck:"animal_breeds/duck-breeds.html",Turkey:"animal_breeds/turkey-breeds.html",Pigeon:"animal_breeds/pigeon-breeds.html",Parrot:"animal_breeds/parrot-breeds.html","Aquarium Fish":"animal_breeds/aquarium-fish-breeds.html",Turtle:"animal_breeds/turtle-breeds.html","Guinea Pig":"animal_breeds/guinea-pig-breeds.html",Hamster:"animal_breeds/hamster-breeds.html",Deer:"animal_breeds/deer-breeds.html",Yak:"animal_breeds/yak-breeds.html"};
-            if(animalPages[match.animal]) window.location.href=animalPages[match.animal];
+if(vetQuizNext){
+    vetQuizNext.addEventListener("click",()=>{
+        if(vetQuizProgress && vetQuizProgress.textContent==="Quiz complete"){
+            vetQuizIndex=0;
+            vetQuizScore=0;
+            renderVetQuizQuestion();
+            return;
         }
-    };
-    card.addEventListener("click",open);
-    card.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();open(e);}});
-});
-
-renderBreedLibrary();
+        if(!vetQuizAnswered) return;
+        if(vetQuizIndex < vetQuizQuestions.length-1){
+            vetQuizIndex++;
+            renderVetQuizQuestion();
+        }else{
+            showVetQuizResult();
+        }
+    });
+}
 
 </script>
 
